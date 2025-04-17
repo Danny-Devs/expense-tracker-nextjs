@@ -12,7 +12,7 @@ const Balance = async () => {
 
   return (
     <>
-      <h4>Your Balance</h4>
+      <h4 style={{ marginBottom: '0.3rem' }}>Your Balance</h4>
       <h1 id="balance">{balanceFormatted}</h1>
     </>
   );
