@@ -13,7 +13,7 @@ const Header = async () => {
         <h2>Expense Tracker</h2>
         <div>
           <SignedOut>
-            <SignInButton />
+            {/* <SignInButton /> */}
           </SignedOut>
           <SignedIn>
             <UserButton />
