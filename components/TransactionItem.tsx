@@ -6,8 +6,10 @@ import { deleteTransaction } from '@/app/actions/deleteTransaction';
 import { HiTrash } from 'react-icons/hi';
 
 const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
-  const handleDelete = async (id: string) => {
-    const { success, error } = await deleteTransaction(id);
+  const handleDelete = async (transactionId: string) => {
+    const confirm = window.confirm('Are you sure you want to delete this transaction?');
+    if (!confirm) return;
+    const { success, error } = await deleteTransaction(transactionId);
     if (error) {
       toast.error(error);
     }

@@ -1,5 +1,4 @@
 import { getTransactions } from '@/app/actions/getTransactions';
-import { Transaction } from '@/types/transaction';
 import TransactionItem from '@/components/TransactionItem';
 
 const TransactionList = async () => {
