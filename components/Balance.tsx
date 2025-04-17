@@ -1,4 +1,5 @@
-import { getUserBalance } from "@/app/actions/getUserBalance";
+import { getUserBalance } from '@/app/actions/getUserBalance';
+import { formatBalance } from '@/lib/utils';
 
 const Balance = async () => {
   const { balance, error } = await getUserBalance();
@@ -7,10 +8,7 @@ const Balance = async () => {
     return <div>{error}</div>;
   }
 
-  const balanceFormatted = balance?.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD'
-  });
+  const balanceFormatted = formatBalance(balance ?? 0);
 
   return (
     <>
