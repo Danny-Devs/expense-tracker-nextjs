@@ -3,7 +3,6 @@
 // Generator section defines how to generate the Prisma Client
 generator client {
   provider = "prisma-client-js" // Uses the JavaScript/TypeScript client
-  output   = "../app/generated/prisma" // Custom location for the generated client
 }
 
 // Database connection configuration
