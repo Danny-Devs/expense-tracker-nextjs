@@ -7,7 +7,7 @@ export const deleteTransaction = async (
   id: string
 ): Promise<{
   error?: string;
-  success?: string;
+  message?: string;
 }> => {
   const { userId } = await auth();
 
@@ -21,7 +21,7 @@ export const deleteTransaction = async (
     });
 
     revalidatePath('/');
-    return { success: 'Transaction deleted' };
+    return { message: 'Transaction deleted' };
   } catch (error) {
     return { error: 'Failed to delete transaction' };
   }

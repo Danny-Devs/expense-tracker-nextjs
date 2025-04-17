@@ -8,11 +8,11 @@ const IncomeExpense = async () => {
     <div className="inc-exp-container">
       <div>
         <h4>Income</h4>
-        <p className="money plus">${formatBalance(income)}</p>
+        <p className="money plus">{formatBalance(income)}</p>
       </div>
       <div>
         <h4>Expense</h4>
-        <p className="money minus">${formatBalance(expense)}</p>
+        <p className="money minus">{formatBalance(expense)}</p>
       </div>
     </div>
   );

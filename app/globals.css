@@ -194,3 +194,8 @@ input[type='number'] {
 .list li:hover .delete-btn {
   opacity: 1;
 }
+
+.text-xs {
+  font-size: 0.9rem;
+  font-style: italic;
+}
