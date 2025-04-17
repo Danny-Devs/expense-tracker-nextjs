@@ -1,24 +1,36 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs';
+import Header from '@/components/Header';
 import './globals.css';
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Expense Tracker',
-  description: 'Track your expenses and create a budget',
+  description: 'Track your expenses and create a budget'
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-      <html lang='en'>
+    <ClerkProvider>
+      <html lang="en">
         <body className={roboto.className}>
-          <main className='container'>{children}</main>
+          <Header />
+          <main className="container">{children}</main>
         </body>
       </html>
+    </ClerkProvider>
   );
 }
