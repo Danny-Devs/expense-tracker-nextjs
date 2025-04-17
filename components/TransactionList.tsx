@@ -1,5 +1,6 @@
 import { getTransactions } from '@/app/actions/getTransactions';
 import { Transaction } from '@/types/transaction';
+import TransactionItem from '@/components/TransactionItem';
 
 const TransactionList = async () => {
   const { transactions, error } = await getTransactions();
@@ -14,11 +15,7 @@ const TransactionList = async () => {
       <ul className="list">
         {transactions &&
           transactions.map(transaction => (
-            <li className={transaction.amount < 0 ? 'minus' : 'plus'}>
-              {transaction.text}
-              <span>{transaction.amount}</span>
-              <button>x</button>
-            </li>
+            <TransactionItem key={transaction.id} transaction={transaction} />
           ))}
       </ul>
     </>
