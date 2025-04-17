@@ -1,0 +1,37 @@
+// This is your Prisma schema file - the central configuration for your database schema
+
+// Generator section defines how to generate the Prisma Client
+generator client {
+  provider = "prisma-client-js" // Uses the JavaScript/TypeScript client
+  output   = "../app/generated/prisma" // Custom location for the generated client
+}
+
+// Database connection configuration
+datasource db {
+  provider = "postgresql" // Using PostgreSQL database
+  url      = env("DATABASE_URL") // Connection string loaded from environment variables
+}
+
+// User model - represents a user in the system
+model User {
+  id           String        @id @default(uuid()) // Primary key with auto-generated UUID
+  clerkUserId  String        @unique // External ID from Clerk authentication service, must be unique
+  email        String        @unique // User's email, must be unique
+  name         String? // Optional name field (? makes it nullable)
+  imageUrl     String? // Optional profile image URL
+  createdAt    DateTime      @default(now()) // Automatically set to current time when record is created
+  updatedAt    DateTime      @updatedAt // Automatically updated whenever the record changes
+  transactions Transaction[] // One-to-many relation - one user can have many transactions
+}
+
+// Transaction model - represents financial transactions
+model Transaction {
+  id        String   @id @default(uuid()) // Primary key with auto-generated UUID
+  text      String // Description of the transaction
+  amount    Float // Amount of money (positive for income, negative for expense)
+  userId    String // Foreign key to link to the user
+  user      User     @relation(fields: [userId], references: [clerkUserId], onDelete: Cascade) // Relation to User model, will delete transactions if user is deleted
+  createdAt DateTime @default(now()) // Timestamp when transaction was created
+
+  @@index([userId]) // Creates a database index on userId for faster queries
+}
