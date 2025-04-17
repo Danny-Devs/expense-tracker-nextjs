@@ -1,6 +1,7 @@
 'use server';
 import { db } from '@/lib/db';
 import { auth } from '@clerk/nextjs/server';
+import { formatBalance } from '@/lib/utils';
 
 export const getIncomeExpense = async (): Promise<{
   income?: number;
