@@ -1,10 +1,9 @@
-
 # Expense Tracker
 
-[![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)](https://reactjs.org/)
-[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)](https://firebase.google.com/)
-[![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat&logo=chart.js&logoColor=white)](https://www.chartjs.org/)
-[![CSS Modules](https://img.shields.io/badge/CSS_Modules-000000?style=flat&logo=css3&logoColor=white)](https://github.com/css-modules/css-modules)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React Server Components](https://img.shields.io/badge/React_Server_Components-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023#react-server-components)
+[![Clerk](https://img.shields.io/badge/Clerk-6C47FF?style=flat&logo=clerk&logoColor=white)](https://clerk.com/)
+[![Neon](https://img.shields.io/badge/Neon-00E699?style=flat&logo=postgresql&logoColor=white)](https://neon.tech/)
 
 A comprehensive financial management application designed to help users monitor spending habits and maintain budget discipline. Features clean user interfaces, secure data storage, and interactive visualizations.
 
@@ -15,19 +14,19 @@ A comprehensive financial management application designed to help users monitor 
 ## Features
 
 - **Expense Management**: Complete CRUD functionality with category assignment and date tracking
-- **Visual Analytics**: Interactive charts showing spending patterns across categories and time periods
+- **Visual Analytics**: Interactive data visualizations showing spending patterns across categories and time periods
 - **Smart Filtering**: Advanced filtering by date range, category, amount, and custom tags
-- **Secure Authentication**: Firebase auth with email/password and social login options
-- **Real-time Updates**: Data synchronization through Firestore across all devices
+- **Secure Authentication**: Clerk authentication with robust identity management and data privacy
+- **Server-Side Rendering**: Optimized performance using Next.js and React Server Components
 - **Export Functionality**: Data export in multiple formats (CSV, PDF) for record-keeping
 
 ## Tech Stack
 
-- React (Hooks & Context API)
-- Firebase Firestore
-- Firebase Authentication
-- Chart.js
-- CSS Modules
+- Next.js Framework
+- React Server Components
+- Clerk Authentication
+- Neon PostgreSQL Database
+- Tailwind CSS
 - Vercel Deployment
 
 ## Installation
@@ -42,7 +41,7 @@ npm install
 
 # Set up environment variables
 cp .env.example .env.local
-# Add your Firebase configuration
+# Add your Clerk and Neon configuration
 
 # Start the development server
 npm run dev
@@ -60,10 +59,10 @@ After starting the development server, the application will be available at `htt
 
 ## Challenges & Solutions
 
-- **Complex data aggregation**: Efficient algorithms for calculating spending totals and trends
-- **Responsive data visualization**: Dynamic charts that adjust to different screen sizes
-- **Offline functionality**: Caching system using IndexedDB with automatic synchronization
-- **Data security**: Comprehensive Firebase security rules for data isolation between users
+- **Efficient data access patterns**: Optimized database queries for financial data with minimal latency
+- **Server component architecture**: Strategic component design to leverage React Server Components
+- **Form validation and security**: Comprehensive validation at both client and server levels
+- **Data security**: Clerk authentication and row-level security in Neon for data isolation between users
 
 ## Future Enhancements
 
